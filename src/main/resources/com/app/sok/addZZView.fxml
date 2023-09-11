@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="300.0" prefWidth="1037.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.sok.controllers.addZZController">
+   <children>
+      <TableView fx:id="table" editable="true" layoutX="280.0" layoutY="9.0" onKeyPressed="#onTableKeyTyped" prefHeight="245.0" prefWidth="744.0" AnchorPane.leftAnchor="283.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+        <columns>
+          <TableColumn fx:id="priority" prefWidth="69.0" resizable="false" text="Приоритет" />
+          <TableColumn fx:id="direction" maxWidth="448.33331298828125" prefWidth="445.66668701171875" resizable="false" text="Направление" />
+            <TableColumn fx:id="level" prefWidth="121.33331298828125" resizable="false" text="Уровень обучения" />
+            <TableColumn fx:id="form" prefWidth="107.0" resizable="false" text="Форма обучения" />
+        </columns>
+      </TableView>
+      <TextField fx:id="searchTextField" layoutX="10.0" layoutY="14.0" onKeyTyped="#keyTyped" prefHeight="25.0" prefWidth="264.0" promptText="Введите код или название" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </TextField>
+      <ListView fx:id="list" layoutX="10.0" layoutY="46.0" onMouseClicked="#listClicked" prefHeight="175.0" prefWidth="264.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="45.0" />
+      <Button fx:id="addDirection" layoutX="14.0" layoutY="255.0" mnemonicParsing="false" onMouseClicked="#addDirectionClicked" prefHeight="25.0" prefWidth="264.0" text="Выбрать" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
+       <Label layoutX="864.0" layoutY="265.0" prefHeight="25.0" prefWidth="76.0" text="Дата подписи" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="864.0" />
+       <TextField fx:id="tf2" layoutX="948.0" layoutY="265.0" onKeyTyped="#tf2Typed" prefHeight="25.0" prefWidth="79.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+       <Button fx:id="addButton" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#onAddButtonClicked" prefHeight="25.0" prefWidth="574.0" text="Добавить" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="283.0" AnchorPane.rightAnchor="180.0" />
+      <MenuButton fx:id="educationFormTF" layoutX="145.0" layoutY="323.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="Форма обучения" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="146.0">
+        <items>
+          <MenuItem fx:id="mi1" mnemonicParsing="false" onAction="#mi1Clicked" text="Очное" />
+          <MenuItem fx:id="mi2" mnemonicParsing="false" onAction="#mi2Clicked" text="Заочное" />
+            <MenuItem fx:id="mi3" mnemonicParsing="false" onAction="#mi3Clicked" text="Очно-заочное" />
+        </items>
+      </MenuButton>
+      <MenuButton fx:id="priorityTF" layoutX="14.0" layoutY="323.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Приоритет" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="10.0">
+         <items>
+            <MenuItem fx:id="mi4" mnemonicParsing="false" onAction="#mi4Clicked" text="1" />
+            <MenuItem fx:id="mi5" mnemonicParsing="false" onAction="#mi5Clicked" text="2" />
+            <MenuItem fx:id="mi6" mnemonicParsing="false" onAction="#mi6Clicked" text="3" />
+         </items>
+      </MenuButton>
+   </children>
+</AnchorPane>
